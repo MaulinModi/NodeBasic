@@ -31,7 +31,7 @@ router.get('/create',function(req,res){
   }  
 });
 
-router.post('/create',function(req,res){
+router.post('/',function(req,res){
   console.log('Post create');
   if(!req.session.user){
       res.redirect('/');
@@ -52,7 +52,7 @@ router.post('/delete',function(req,res){
    if(index === -1){
       console.log("Book Not Found");
    } else {
-      books.splice(index, 1);
+      users.splice(index, 1);
       console.log("Book : " + req.body.UserID + " was removed successfully");
       res.redirect('/users');
    }
